@@ -17,7 +17,7 @@ namespace PlaywrightDemo5
 
         public static async Task<IPage> GetPageAsync()
         {
-            using var playwright = await Playwright.CreateAsync();
+            var playwright = await Playwright.CreateAsync();
             await using var browser = await playwright.Chromium.LaunchAsync();
             return await browser.NewPageAsync();
         }
